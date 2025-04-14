@@ -20,10 +20,10 @@ main()
 	encontrado=strstr(cadena,subcadena);
 	if(encontrado!=NULL)
 	{
-		printf("La subcadena %s se encuentra en la cadena %s en la posicion %d\n",subcadena,cadena,encontrado-cadena+1);
+		printf("La subcadena '%s' se encuentra en la cadena '%s' en la posicion %d\n",subcadena,cadena,encontrado-cadena+1);
 	}else
 	{
-		printf("La subcadena %s no se encuentra en la cadena %s\n",subcadena,cadena);
+		printf("La subcadena '%s' no se encuentra en la cadena '%s'\n",subcadena,cadena);
 	}
 }
 
