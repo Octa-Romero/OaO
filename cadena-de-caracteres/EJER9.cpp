@@ -10,7 +10,7 @@ main()
 {
 	printf("Ingrese una oracion \n");
 	fgets(cadena,sizeof(cadena),stdin);
-	printf("Ingrese una accion a realizar:\na) Mostrar la oracion toda en mayuscula\nb) Mostrar la oracion todo en minusculas\nc) Mostrar la oracion alternando una mayuscula y una minuscula\nd) Mostrar la oracion comenzando todas las palabras con mayuscula\n");
+	printf("Ingrese una accion a realizar:\n1) Mostrar la oracion toda en mayuscula\n2) Mostrar la oracion todo en minusculas\n3) Mostrar la oracion alternando una mayuscula y una minuscula\n4) Mostrar la oracion comenzando todas las palabras con mayuscula\n");
 	scanf("%d",&opcion);
 	int longitud=strlen(cadena);
 	for(i=0;i<strlen(cadena);i++)
