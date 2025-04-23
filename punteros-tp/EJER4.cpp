@@ -13,10 +13,10 @@ void copiarArreglo(int *arr1,int *arr2, int tam)
 
 void mostrarCopia(int *arr2, int tam)
 {
-	printf("El resultado de la copia es:\n");
+	printf("\n\nVECTOR 2:");
 	for(i=0;i<tam;i++)
 	{
-		printf("Valor %d del arreglo 2 : %d\n",i+1,arr2[i]);
+		printf("|%d|",arr2[i]);
 	}
 }
 
@@ -34,6 +34,12 @@ int main()
 	}
 	
 	copiarArreglo(arreglo1,arreglo2,tam);
+	printf("El resultado de la copia es:\n");
+	printf("VECTOR 1:");
+	for(i=0;i<tam;i++)
+	{
+		printf("|%d|",arreglo1[i]);
+	}
 	
 	mostrarCopia(arreglo2,tam);
 }
