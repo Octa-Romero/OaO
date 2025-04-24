@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-int i;
-
 void validacionDatos(FILE *archivo,char *nombre,char *apellido,int dni)
 {
 	int dniAux,coincidencia=0;
@@ -93,6 +91,12 @@ void busquedaDni(FILE *archivo,char *nombre,char *apellido,int dni)
 	fclose(archivo);
 }
 
+void ordenarNombres(FILE *archivo)
+{
+	archivo=fopen("usuarios.txt","a+");
+	
+}
+
 main()
 {
 	FILE *archivo;
@@ -100,7 +104,7 @@ main()
 	int dni,seguir,busqueda,opcion;
 	do
 	{
-	printf("\nEJECUCIONES DEL PROGRAMA\nIngresar datos (1) / Buscar Datos (2) / Salir del programa (3)\nQue ejecucion desea realizar?:");
+	printf("\nEJECUCIONES DEL PROGRAMA\nIngresar datos (1) / Buscar Datos (2) / Mostrar Datos (3) / Salir del programa (4)\nQue ejecucion desea realizar?:");
 	scanf("%d",&opcion);
 	switch(opcion)
 	{
@@ -128,8 +132,23 @@ main()
 					break;
 			}
 		break;
+		
+	case 3:
+		int opcionDatos;
+		printf("\nMOSTRAR DATOS ORDENADOS POR:\nNombre (1) / Apellido (2) / DNI (3)\n");
+		scanf("%d",&opcionDatos);
+		switch(opcionDatos)
+		{
+			case 1:
+				
+				
+				
+				break;
+				
+				
+		}
 }
-}while(opcion!=3);
+}while(opcion!=4);
 printf("\nPROGRAMA FINALIZADO CON EXITO,HASTA LUEGO (•-•)\n");
 
 }
