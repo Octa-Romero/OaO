@@ -45,22 +45,31 @@ void ingresarDatos(FILE *archivo,char nombre[],char apellido[],int dni,int segui
 
 void busquedaNomCompleto(FILE *archivo,char *nombre,char *apellido,int dni)
 {
-	int encontrado=0;
+	int encontrado=0,contBusqNomCompleto=0;
 	char busqNombre[35],busqApellido[35];
 	archivo=fopen("usuarios.txt","r");
 	printf("\nIngrese nombre del usuario:");
 	scanf("%s",busqNombre);
 	printf("\n\nIngrese apellido del usuario:");
 	scanf("%s",busqApellido);
+	printf("\nResultados de la busqueda:\n");
 	while(fscanf(archivo,"%s %s %d",nombre,apellido,&dni)==3)
 	{
 		if(strcmp(busqNombre,nombre)==0 && strcmp(busqApellido,apellido)==0)
 		{
-			printf("\nEl usuario %s %s tiene de DNI %d \n",nombre,apellido,dni);
+		
+			printf("\n%s %s de DNI %d \n",nombre,apellido,dni);
 			encontrado=1;
-			break;
+			contBusqNomCompleto++;
 		}
 	}
+	if(contBusqNomCompleto==1)
+	{
+	printf("\n%d resultado arrojado\n",contBusqNomCompleto);
+}else if(contBusqNomCompleto>1)
+{
+	printf("\n%d resultados arrojados\n",contBusqNomCompleto);
+}
 	
 	if(encontrado==0)
 	{
@@ -91,10 +100,86 @@ void busquedaDni(FILE *archivo,char *nombre,char *apellido,int dni)
 	fclose(archivo);
 }
 
-void ordenarNombres(FILE *archivo)
+void ordenar(FILE *archivo,char *nombre,char *apellido,int dni)
 {
-	archivo=fopen("usuarios.txt","a+");
-	
+	archivo = fopen("usuarios.txt", "r");
+	int tam=0,opcion;
+	printf("\nMOSTRAR DATOS ORDENADOS POR:\nNombre y Apellido (1) / DNI (2)\nCual opcion elige?:");
+	scanf("%d",&opcion);
+	while(fscanf(archivo,"%s %s %d",nombre,apellido,&dni)==3)
+	{
+		tam++;
+	}
+	rewind(archivo);
+	int dnis[tam],cont=0;
+	char nombres[tam][35],apellidos[tam][35];
+	while(fscanf(archivo,"%s %s %d",nombre,apellido,&dni)==3)
+	{
+		dnis[cont]=dni;
+		strcpy(nombres[cont],nombre);
+		strcpy(apellidos[cont],apellido);
+		cont++;
+	}
+	fclose(archivo);
+	if(opcion==1)
+	{
+	for(int i=0;i<tam-1;i++)
+	{
+		for(int j=i+1;j<tam;j++)
+		{
+			if(strcmp(apellidos[i],apellidos[j]) > 0 || 
+			   strcmp(apellidos[i],apellidos[j])==0 && strcmp(nombres[i],nombres[j]) > 0)
+			   {
+			   	char auxNom[35],auxApe[35];
+			   	int auxDni;
+			   	strcpy(auxApe,apellidos[i]);
+			   	strcpy(apellidos[i],apellidos[j]);
+			   	strcpy(apellidos[j],auxApe);
+			   	strcpy(auxNom,nombres[i]);
+			   	strcpy(nombres[i],nombres[j]);
+			   	strcpy(nombres[j],auxNom);
+			   	auxDni=dnis[i];
+			   	dnis[i]=dnis[j];
+			   	dnis[j]=auxDni;
+			   }
+		}
+	}
+	for(int i=0;i<tam;i++)
+	{
+		printf("\n  %s %s de DNI:%d\n",apellidos[i],nombres[i],dnis[i]);
+	}
+	printf("\nResultados arrojados : %d\n",tam);
+}else if(opcion==2)
+{
+	for(int i=0;i<tam-1;i++)
+	{
+		for(int j=i+1;j<tam;j++)
+		{
+			if(dnis[i]>dnis[j])
+			   {
+			   	char auxNom[35],auxApe[35];
+			   	int auxDni;
+			   	strcpy(auxApe,apellidos[i]);
+			   	strcpy(apellidos[i],apellidos[j]);
+			   	strcpy(apellidos[j],auxApe);
+			   	strcpy(auxNom,nombres[i]);
+			   	strcpy(nombres[i],nombres[j]);
+			   	strcpy(nombres[j],auxNom);
+			   	auxDni=dnis[i];
+			   	dnis[i]=dnis[j];
+			   	dnis[j]=auxDni;
+			   }
+		}
+	}
+	for(int i=0;i<tam;i++)
+	{
+		printf("\n  %d %s %s\n\n",dnis[i],apellidos[i],nombres[i]);
+	}
+	printf("\nResultados arrojados : %d\n",tam);
+}else if(opcion!=1 || opcion !=2)
+{
+	printf("\nOpcion incorrecta,porfavor ingrese una opcion valida\n");
+}
 }
 
 main()
@@ -106,6 +191,10 @@ main()
 	{
 	printf("\nEJECUCIONES DEL PROGRAMA\nIngresar datos (1) / Buscar Datos (2) / Mostrar Datos (3) / Salir del programa (4)\nQue ejecucion desea realizar?:");
 	scanf("%d",&opcion);
+	if(opcion!=1&&opcion!=2&&opcion!=3&&opcion!=4)
+	{
+		printf("\nEjecucion no valida para el programa,porfavor ingrese una valida\n");
+	}
 	switch(opcion)
 	{
 	case 1:
@@ -118,6 +207,10 @@ main()
 		int opcionBusq;
 			printf("\nMETODO DE BUSQUEDA\nNombre y Apellido (1) / DNI (2)\nCual desea utilizar?:");
 			scanf("%d",&opcionBusq);
+			if(opcionBusq!=1 && opcionBusq!=2)
+			{
+				printf("\nOpcion incorrecta,porfavor ingrese una opcion valida\n");
+			}
 			switch(opcionBusq)
 			{
 				case 1:	
@@ -134,19 +227,10 @@ main()
 		break;
 		
 	case 3:
-		int opcionDatos;
-		printf("\nMOSTRAR DATOS ORDENADOS POR:\nNombre (1) / Apellido (2) / DNI (3)\n");
-		scanf("%d",&opcionDatos);
-		switch(opcionDatos)
-		{
-			case 1:
 				
-				
-				
-				break;
-				
-				
-		}
+			ordenar(archivo,nombre,apellido,dni);
+			
+		break;
 }
 }while(opcion!=4);
 printf("\nPROGRAMA FINALIZADO CON EXITO,HASTA LUEGO (•-•)\n");
