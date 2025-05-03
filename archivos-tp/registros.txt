@@ -3,50 +3,6 @@
 
 Ingrese el nombre del jugador
 
-Busqueda : lionel
-
-El jugador lionel tiene un puntaje de 0
-
-El jugador lionel tiene un puntaje de 100
-
-|Busqueda 1|
-
-Ingrese el nombre del jugador
-
-Busqueda : octavio
-
-El jugador octavio tiene un puntaje de 0
-
-|Busqueda 2|
-
-Ingrese el nombre del jugador
-
-Busqueda : matias
-
-El jugador matias tiene un puntaje de 25
-
-|Busqueda 1|
-
-Ingrese el nombre del jugador
-
-Busqueda : lionel
-
-El jugador lionel tiene un puntaje de 0
-
-El jugador lionel tiene un puntaje de 100
-
-|Busqueda 2|
-
-Ingrese el nombre del jugador
-
-Busqueda : keymaster
-
-El jugador keymaster tiene un puntaje de 12
-
-|Busqueda 1|
-
-Ingrese el nombre del jugador
-
 Busqueda : keymaster
 
 El jugador keymaster tiene un puntaje de 12
