@@ -1,0 +1,108 @@
+
+|Busqueda 1|
+
+Ingrese el nombre del jugador
+
+Busqueda : lionel
+
+El jugador lionel tiene un puntaje de 0
+
+El jugador lionel tiene un puntaje de 100
+
+|Busqueda 1|
+
+Ingrese el nombre del jugador
+
+Busqueda : octavio
+
+El jugador octavio tiene un puntaje de 0
+
+|Busqueda 2|
+
+Ingrese el nombre del jugador
+
+Busqueda : matias
+
+El jugador matias tiene un puntaje de 25
+
+|Busqueda 1|
+
+Ingrese el nombre del jugador
+
+Busqueda : lionel
+
+El jugador lionel tiene un puntaje de 0
+
+El jugador lionel tiene un puntaje de 100
+
+|Busqueda 2|
+
+Ingrese el nombre del jugador
+
+Busqueda : keymaster
+
+El jugador keymaster tiene un puntaje de 12
+
+|Busqueda 1|
+
+Ingrese el nombre del jugador
+
+Busqueda : keymaster
+
+El jugador keymaster tiene un puntaje de 12
+
+|Busqueda 2|
+
+Ingrese el nombre del jugador
+
+Busqueda : leaandro
+
+No existe un usuario con ese nombre dentro del archivo
+
+|Busqueda 3|
+
+Ingrese el nombre del jugador
+
+Busqueda : leandro
+
+El jugador leandro tiene un puntaje de 16
+
+|Busqueda 4|
+
+Ingrese el nombre del jugador
+
+Busqueda : tobias
+
+No existe un usuario con ese nombre dentro del archivo
+
+|Busqueda 5|
+
+Ingrese el nombre del jugador
+
+Busqueda : octavio
+
+El jugador octavio tiene un puntaje de 0
+
+|Busqueda 6|
+
+Ingrese el nombre del jugador
+
+Busqueda : matias
+
+El jugador matias tiene un puntaje de 25
+
+|Busqueda 7|
+
+Ingrese el nombre del jugador
+
+Busqueda : keymaster
+
+El jugador keymaster tiene un puntaje de 12
+
+|Busqueda 8|
+
+Ingrese el nombre del jugador
+
+Busqueda : programador121
+
+El jugador programador121 tiene un puntaje de 97
