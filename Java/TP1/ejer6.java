@@ -11,7 +11,6 @@ public class ejer6 {
 		{
 			palabraInvertida+=palabra.charAt(i);
 		}
-		palabraInvertida.trim();
 		System.out.println(palabraInvertida);
 	}
 
