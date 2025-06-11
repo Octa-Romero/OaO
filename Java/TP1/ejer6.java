@@ -11,7 +11,7 @@ public class ejer6 {
 		{
 			palabraInvertida+=palabra.charAt(i); 			// almaceno en la variable palabraInvertida las letras de la variable palabra empezando desde el final
 		}
-		System.out.println(palabraInvertida);				// imprimo la palabra invertida como salida
+		System.out.println("La palabra invertida es: " + palabraInvertida);				// imprimo la palabra invertida como salida
 		sc.close(); 										// cierro el scanner
 	}
 }
